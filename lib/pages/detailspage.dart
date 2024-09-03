@@ -48,7 +48,8 @@ class DetailsPage extends StatelessWidget {
                   margin:
                       const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
                   decoration: BoxDecoration(
-                      color: const Color(0xffffecec),
+                      color: int.parse(index) % 2 == 0 ? const Color(0xffffecec)
+                        : const Color(0xffEDF1F4),
                       borderRadius: BorderRadius.circular(30)),
                   child: Container(
                     height: 180,
@@ -66,7 +67,9 @@ class DetailsPage extends StatelessWidget {
                             height: 220,
                             width: 220,
                             decoration: BoxDecoration(
-                                color: const Color(0xfff7d4d5),
+                                color: int.parse(index) % 2 == 0
+                                    ? const Color(0xfff7d4d5)
+                                    : const Color(0xffDAE4E6),
                                 borderRadius: BorderRadius.circular(40)),
                           ),
                         ),
