@@ -93,6 +93,19 @@ class Ui04Page extends StatelessWidget {
               SizedBox(
                 height: 700,
                 width: double.maxFinite,
+                child: MasonryGridView.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 2,
+                  itemCount: 12,
+                  itemBuilder: (context, index) {
+                    return Container(child: Center(child: Text('$index',style: const TextStyle(fontSize: 38,color: Colors.white),),),color: Colors.black,);
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 700,
+                width: double.maxFinite,
                 child: GridView.custom(
                   gridDelegate: SliverWovenGridDelegate.count(
                     crossAxisCount: 3,
@@ -147,7 +160,7 @@ class Ui04Page extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 700,
                 width: double.maxFinite,
                 child: GridView.custom(
