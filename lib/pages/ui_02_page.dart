@@ -188,182 +188,185 @@ class Ui02Page extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height * 0.65,
                 width: MediaQuery.of(context).size.width * 0.85,
-                child: ListView.builder(
-                  itemCount: 10,
-                  padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 0),
-                  itemBuilder: (BuildContext context, index) {
-                    return GestureDetector(
-                      onTap: (){
-                        context.goNamed(MyAppRouteConstants.detailsRouteName,pathParameters: {'index':index.toString()});
-                      },
-                      child: Container(
-                        height: 200,
-                        margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
-                        width: MediaQuery.of(context).size.width * 0.85,
-                        decoration: BoxDecoration(
-                            color: index % 2 == 0
-                                ? const Color(0xffffecec)
-                                : const Color(0xffEDF1F4),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              height: 180,
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: const Color(0xfff7d4d5).withOpacity(0.0),
-                              ),
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Transform.rotate(
-                                    angle: -0.25,
-                                    child: Container(
-                                      height: 100,
-                                      width: 90,
-                                      decoration: BoxDecoration(
-                                          color: index % 2 == 0
-                                              ? const Color(0xfff7d4d5)
-                                              : const Color(0xffDAE4E6),
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                  child: ListView.builder(
+                    itemCount: 10,
+                    padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 0),
+                    itemBuilder: (BuildContext context, index) {
+                      return GestureDetector(
+                        onTap: (){
+                          context.pushNamed(MyAppRouteConstants.detailsRouteName,pathParameters: {'index':index.toString()});
+                        },
+                        child: Container(
+                          height: 200,
+                          margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
+                          width: MediaQuery.of(context).size.width * 0.85,
+                          decoration: BoxDecoration(
+                              color: index % 2 == 0
+                                  ? const Color(0xffffecec)
+                                  : const Color(0xffEDF1F4),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height: 180,
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: const Color(0xfff7d4d5).withOpacity(0.0),
+                                ),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    Transform.rotate(
+                                      angle: -0.25,
+                                      child: Container(
+                                        height: 100,
+                                        width: 90,
+                                        decoration: BoxDecoration(
+                                            color: index % 2 == 0
+                                                ? const Color(0xfff7d4d5)
+                                                : const Color(0xffDAE4E6),
+                                            borderRadius:
+                                                BorderRadius.circular(12)),
+                                      ),
                                     ),
-                                  ),
-                                  Transform.translate(
-                                    offset: const Offset(5, -15),
-                                    child: Transform.scale(
-                                      scale: 1.7,
-                                      child: Transform.rotate(
-                                        angle: 0.3,
-                                        child: Image.asset(
-                                          'images/nike.png',
-                                          fit: BoxFit.fitWidth,
+                                    Transform.translate(
+                                      offset: const Offset(5, -15),
+                                      child: Transform.scale(
+                                        scale: 1.7,
+                                        child: Transform.rotate(
+                                          angle: 0.3,
+                                          child: Image.asset(
+                                            'images/nike.png',
+                                            fit: BoxFit.fitWidth,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Transform.translate(
-                                    offset: const Offset(-65, -75),
-                                    child: const CircleAvatar(
-                                      backgroundColor: Color(0xfffefaff),
-                                      radius: 15,
-                                      child: Icon(
-                                        CupertinoIcons.heart_fill,
-                                        size: 16,
-                                        color: Color(0xffed783a),
+                                    Transform.translate(
+                                      offset: const Offset(-65, -75),
+                                      child: const CircleAvatar(
+                                        backgroundColor: Color(0xfffefaff),
+                                        radius: 15,
+                                        child: Icon(
+                                          CupertinoIcons.heart_fill,
+                                          size: 16,
+                                          color: Color(0xffed783a),
+                                        )
                                       )
-                                    )
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              height: 180,
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: const Color(0xfff7d4d5).withOpacity(0.0),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 8.0, vertical: 8),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'Nike Air Pegasus',
-                                      style: TextStyle(
-                                          fontFamily: 'roboto',
-                                          color: Color(0xff453e60),
-                                          fontSize: 18),
                                     ),
-                                    const Text(
-                                      'By Nike',
-                                      style: TextStyle(
-                                          fontFamily: 'roboto',
-                                          color: Color(0xffb5b2b9),
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w100),
-                                    ),
-                                    const SizedBox(
-                                      height: 8,
-                                    ),
-                                    const Text(
-                                      'Lorem ipsum dolor sit amet, elit.',
-                                      style: TextStyle(
-                                          fontFamily: 'roboto',
-                                          color: Color(0xffb5b2b9),
-                                          fontSize: 12),
-                                    ),
-                                    const SizedBox(
-                                      height: 8,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        RichText(
-                                          text: TextSpan(
-                                            children: [
-                                              const TextSpan(
-                                                text: '\$100.',
-                                                style: TextStyle(
-                                                  color: Color(0xff54474e),
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
-                                                ),
-                                              ),
-                                              WidgetSpan(
-                                                child: Transform.translate(
-                                                    offset: const Offset(-1, 4),
-                                                    child: const Text('00',
-                                                        textScaler:
-                                                            TextScaler.linear(
-                                                                0.6),
-                                                        style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.w400,
-                                                            color:
-                                                                Color(0xff54474e),
-                                                            fontSize: 25))),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                            height: 30,
-                                            child: ElevatedButton(
-                                                onPressed: () {},
-                                                style: ElevatedButton.styleFrom(
-                                                  elevation: 2,
-                                                  backgroundColor:
-                                                      const Color(0xff453e60),
-                                                ),
-                                                child: const Text(
-                                                  'Buy',
-                                                  style: TextStyle(
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      color: Color(0xffb1accc),
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                )))
-                                      ],
-                                    )
                                   ],
                                 ),
                               ),
-                            ),
-                          ],
+                              Container(
+                                height: 180,
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: const Color(0xfff7d4d5).withOpacity(0.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0, vertical: 8),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        'Nike Air Pegasus',
+                                        style: TextStyle(
+                                            fontFamily: 'roboto',
+                                            color: Color(0xff453e60),
+                                            fontSize: 18),
+                                      ),
+                                      const Text(
+                                        'By Nike',
+                                        style: TextStyle(
+                                            fontFamily: 'roboto',
+                                            color: Color(0xffb5b2b9),
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w100),
+                                      ),
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      const Text(
+                                        'Lorem ipsum dolor sit amet, elit.',
+                                        style: TextStyle(
+                                            fontFamily: 'roboto',
+                                            color: Color(0xffb5b2b9),
+                                            fontSize: 12),
+                                      ),
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                const TextSpan(
+                                                  text: '\$100.',
+                                                  style: TextStyle(
+                                                    color: Color(0xff54474e),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                  ),
+                                                ),
+                                                WidgetSpan(
+                                                  child: Transform.translate(
+                                                      offset: const Offset(-1, 4),
+                                                      child: const Text('00',
+                                                          textScaler:
+                                                              TextScaler.linear(
+                                                                  0.6),
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight.w400,
+                                                              color:
+                                                                  Color(0xff54474e),
+                                                              fontSize: 25))),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                              height: 30,
+                                              child: ElevatedButton(
+                                                  onPressed: () {},
+                                                  style: ElevatedButton.styleFrom(
+                                                    elevation: 2,
+                                                    backgroundColor:
+                                                        const Color(0xff453e60),
+                                                  ),
+                                                  child: const Text(
+                                                    'Buy',
+                                                    style: TextStyle(
+                                                        overflow:
+                                                            TextOverflow.ellipsis,
+                                                        color: Color(0xffb1accc),
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  )))
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               )
             ],

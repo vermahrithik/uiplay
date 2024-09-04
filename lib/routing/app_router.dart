@@ -6,6 +6,7 @@ import 'package:uiplay/pages/layouts.dart';
 import 'package:uiplay/pages/ui_01_page.dart';
 import 'package:uiplay/pages/ui_02_page.dart';
 import 'package:uiplay/pages/ui_03_page.dart';
+import 'package:uiplay/pages/ui_04_page.dart';
 import 'package:uiplay/routing/app_route_constants.dart';
 
 class MyAppRouter{
@@ -61,7 +62,15 @@ class MyAppRouter{
           return MaterialPage(child: Ui03Page());
         },
       ),
-      // UI03 Page Route :
+      GoRoute(
+        name: MyAppRouteConstants.ui04RouteName,
+        path: '/ui04',
+        pageBuilder: (context,state){
+          debugPrint('config page : ui 04 Page');
+          return MaterialPage(child: Ui04Page());
+        },
+      ),
+      // Layout Page Route :
       GoRoute(
         name: MyAppRouteConstants.layoutRouteName,
         path: '/layout',

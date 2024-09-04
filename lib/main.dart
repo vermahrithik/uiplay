@@ -8,6 +8,7 @@ void main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter router= MyAppRouter.router;
+  GoRouter.optionURLReflectsImperativeAPIs = true;
   runApp(MyApp(routerr:router));
 }
 

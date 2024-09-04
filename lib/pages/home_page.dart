@@ -35,6 +35,13 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui03RouteName);}, style: IconButton.styleFrom(backgroundColor: Color(0xff3F422E)),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('ui 04 page --> ',style: TextStyle(color: Colors.deepPurpleAccent),),
+                SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui04RouteName);}, style: IconButton.styleFrom(backgroundColor: Colors.deepPurpleAccent),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
+              ],
+            ),
             SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.layoutRouteName);}, style: IconButton.styleFrom(backgroundColor: Color(0xff9F886F)),icon: Icon(Icons.account_tree,color: Colors.white,)))
           ],
         )

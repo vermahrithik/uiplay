@@ -8,7 +8,7 @@ class LayoutPage extends StatelessWidget {
     return Scaffold(
       body: LayoutBuilder(builder: (BuildContext context,BoxConstraints constraints){
         return GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: constraints.maxWidth>600?7:3),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: constraints.maxWidth>1200?7:3),
             itemCount: 30,
             itemBuilder: (context,index){
               return Center(
