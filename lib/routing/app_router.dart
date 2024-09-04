@@ -7,6 +7,10 @@ import 'package:uiplay/pages/ui_01_page.dart';
 import 'package:uiplay/pages/ui_02_page.dart';
 import 'package:uiplay/pages/ui_03_page.dart';
 import 'package:uiplay/pages/ui_04_page.dart';
+import 'package:uiplay/pages/ui_05_page.dart';
+import 'package:uiplay/pages/ui_06_page.dart';
+import 'package:uiplay/pages/ui_07_page.dart';
+import 'package:uiplay/pages/ui_08_page.dart';
 import 'package:uiplay/routing/app_route_constants.dart';
 
 class MyAppRouter{
@@ -68,6 +72,38 @@ class MyAppRouter{
         pageBuilder: (context,state){
           debugPrint('config page : ui 04 Page');
           return MaterialPage(child: Ui04Page());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.ui05RouteName,
+        path: '/ui05',
+        pageBuilder: (context,state){
+          debugPrint('config page : ui 05 Page');
+          return MaterialPage(child: Ui05Page());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.ui06RouteName,
+        path: '/ui06',
+        pageBuilder: (context,state){
+          debugPrint('config page : ui 06 Page');
+          return MaterialPage(child: Ui06Page());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.ui07RouteName,
+        path: '/ui07',
+        pageBuilder: (context,state){
+          debugPrint('config page : ui 07 Page');
+          return MaterialPage(child: Ui07Page());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.ui08RouteName,
+        path: '/ui08',
+        pageBuilder: (context,state){
+          debugPrint('config page : ui 08 Page');
+          return MaterialPage(child: Ui08Page());
         },
       ),
       // Layout Page Route :

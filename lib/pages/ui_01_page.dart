@@ -126,30 +126,16 @@ class Ui01Page extends StatelessWidget {
                   }
                 ),
             ),
-            const SizedBox(height: 16,),
-            SizedBox(
-              height: 60,
-              width:120,
-              child: ElevatedButton(
-                onPressed: (){
-                  context.goNamed(MyAppRouteConstants.ui02RouteName);
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xffee9858)
-                ),
-                child: const Text(
-                  'UI 02 ↵',
-                  style: TextStyle(
-                      overflow: TextOverflow.ellipsis,
-                      color: Color(0xffd6d7d7),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          context.goNamed(MyAppRouteConstants.ui02RouteName);
+        },
+        backgroundColor: Colors.blueAccent,
+        elevation: 4,
+        child: Icon(Icons.skip_next,color: Colors.white,),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0xff101110),

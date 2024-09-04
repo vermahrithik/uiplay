@@ -370,6 +370,14 @@ class Ui03Page extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          context.goNamed(MyAppRouteConstants.ui04RouteName);
+        },
+        backgroundColor: Colors.blueAccent,
+        elevation: 4,
+        child: Icon(Icons.skip_next,color: Colors.white,),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           const BottomNavigationBarItem(icon: Icon(Icons.home,color: Color(0xffed783a),),label: ""),

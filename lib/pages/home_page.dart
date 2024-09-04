@@ -42,6 +42,34 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui04RouteName);}, style: IconButton.styleFrom(backgroundColor: Colors.deepPurpleAccent),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('ui 05 page --> ',style: TextStyle(color: Colors.teal),),
+                SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui05RouteName);}, style: IconButton.styleFrom(backgroundColor: Colors.teal),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('ui 06 page --> ',style: TextStyle(color: Colors.grey),),
+                SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui06RouteName);}, style: IconButton.styleFrom(backgroundColor: Colors.grey),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('ui 07 page --> ',style: TextStyle(color: Colors.indigo),),
+                SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui07RouteName);}, style: IconButton.styleFrom(backgroundColor: Colors.indigo),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('ui 08 page --> ',style: TextStyle(color: Colors.deepOrangeAccent),),
+                SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.ui08RouteName);}, style: IconButton.styleFrom(backgroundColor: Colors.deepOrangeAccent),icon: Icon(Icons.view_quilt_rounded,color: Colors.white,)))
+              ],
+            ),
             SizedBox(height: 40,width: 40,child: IconButton(onPressed: (){context.goNamed(MyAppRouteConstants.layoutRouteName);}, style: IconButton.styleFrom(backgroundColor: Color(0xff9F886F)),icon: Icon(Icons.account_tree,color: Colors.white,)))
           ],
         )

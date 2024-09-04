@@ -91,15 +91,21 @@ class Ui04Page extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 700,
+                height: 500,
                 width: double.maxFinite,
                 child: MasonryGridView.count(
-                  crossAxisCount: 2,
+                  crossAxisCount: 3,
                   mainAxisSpacing: 4,
-                  crossAxisSpacing: 2,
-                  itemCount: 12,
+                  crossAxisSpacing: 4,
+                  itemCount: 20,
                   itemBuilder: (context, index) {
-                    return Container(child: Center(child: Text('$index',style: const TextStyle(fontSize: 38,color: Colors.white),),),color: Colors.black,);
+                    return Container(
+                      color: Colors.blue,
+                      height: (index % 5 + 1) * 50.0,
+                      child: Center(
+                        child: Text('Item $index'),
+                      ),
+                    );
                   },
                 ),
               ),
@@ -238,6 +244,14 @@ class Ui04Page extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          context.goNamed(MyAppRouteConstants.ui05RouteName);
+        },
+        backgroundColor: Colors.blueAccent,
+        elevation: 4,
+        child: Icon(Icons.skip_next,color: Colors.white,),
       ),
     );
   }
