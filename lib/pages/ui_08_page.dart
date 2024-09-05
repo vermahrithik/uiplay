@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:uiplay/routing/app_route_constants.dart';
 
 class Ui08Page extends StatefulWidget {
   const Ui08Page({super.key});
@@ -41,7 +43,15 @@ class _Ui08PageState extends State<Ui08Page> {
             )
         ],
         onReorder: (oldIndex, newIndex) => updateMyTiles(oldIndex,newIndex),
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          context.goNamed(MyAppRouteConstants.homeRouteName);
+        },
+        backgroundColor: Colors.blueAccent,
+        elevation: 4,
+        child: Icon(Icons.skip_next,color: Colors.white,),
+      ),
     );
   }
 }
